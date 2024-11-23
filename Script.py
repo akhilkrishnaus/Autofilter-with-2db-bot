@@ -338,11 +338,10 @@ Total Members = <code>{}</code>
 Added By - {}
 """
     RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
-<blockquote>『👑』 Mr.been ◢ ◤</blockquote>
-📅 Dᴀᴛᴇ : <code>{}</code>
-⏰Tɪᴍᴇ : <code>{}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code></b>"""
+<b>✅ Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+<blockquote>Jerry</blockquote>
+Dᴀᴛᴇ : <code>{}</code>
+Tɪᴍᴇ : <code>{}</code></b>"""
     
     LOG_TEXT_P = """#NewUser
 ID - <code>{}</code>
