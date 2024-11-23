@@ -531,8 +531,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                     InlineKeyboardButton('• Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ •', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('Find The Movie Here🔎', switch_inline_query_current_chat=''),
-                ],[
                     InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='help'),
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about'),
                 ]]
@@ -1218,7 +1216,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'{search}', 'qinfo')
+            InlineKeyboardButton(f'🔥{search}🔥', 'qinfo')
         ]
     )
     btn.insert(1, 
@@ -1275,7 +1273,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hᴇʏ 👋🏻{message.from_user.mention} 💝,\n\n📫 Hᴇʀᴇ ɪs Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ</b>"
+        cap = f"<b>Hᴇʏ 👋🏻{message.from_user.mention} 💝,\n\n📫 Hᴇʀᴇ ɪs Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ is\n{search} </b>"
     if imdb and imdb.get('poster'):
         try:
             mes=await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
