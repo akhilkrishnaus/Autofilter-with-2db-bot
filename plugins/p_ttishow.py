@@ -153,7 +153,7 @@ async def re_enable_chat(bot, message):
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_stats(bot, message):
     if message.from_user.id in ADMINS:
-        rju = await message.reply('Fetching stats..')
+        rju = await message.reply('<b>𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚂𝚃𝙰𝚃𝚄𝚂 𝙳𝙴𝚃𝙰𝙸𝙻𝚂...</b>')
         #users and chats
         total_users = await db.total_users_count()
         totl_chats = await db.total_chat_count()
