@@ -109,29 +109,17 @@ async def give_filter(client,message):
             await auto_filter(client, message)
 
 
-@Client.on_message(filters.private & filters.text & filters.incoming)
-async def pm_text(bot, message):
-    content = message.text
-    user = message.from_user.first_name
-    user_id = message.from_user.id
-    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    await message.reply_text("<b>ʜᴇʏ Mʀ.Bʀᴏ😍 ,\n\n ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ <a href='https://t.me/mallumovieworldmain'>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ​👇</b>",
-                             reply_markup=InlineKeyboardMarkup(
-                                 [[
-                                     InlineKeyboardButton('📕 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ', url='https://t.me/mallumovieworldmain')
-                                 ]]
-                             )
-                             )
-    await bot.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"<b>#PM_MSG\n\nName : {user}\n\nID : {user_id}\n\nMessage : {content}</b>"
-    )
+@Client.on_message(filters.private & filters.text & filters.incoming) 
+async def give_filter(client, message):
+    k = await manual_filters(client, message)
+    if k == False:
+        await auto_filter(client, message)
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("**Search for **\n{search} 🔎", show_alert=True)
     try:
         offset = int(offset)
     except:
