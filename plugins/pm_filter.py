@@ -863,7 +863,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     )
     await msg.reply_chat_action(enums.ChatAction.TYPING)
-    px = await message.reply_sticker(CAACAgIAAyEFAASDYYk1AAI7dGdOwfTrsG6h4n4wdb6Xxahcskm_AAJVAAOvxlEaZOf88CXpEL8eBA)
+    px = await message.reply_text(f"<b>Your Query {search} is 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠...</b>", quote=True)
     await asyncio.sleep(1)
     await px.delete()
    
