@@ -49,10 +49,8 @@ async def start(client, message):
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about'),
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_sticker(
-            query.message.chat.id,
-            query.message.id,
-            sticker=random.choice(PICS),
+        await message.reply_photo(
+            photo=("https://telegra.ph/file/74b540e9a28187613fcc8.jpg"),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
@@ -94,11 +92,8 @@ async def start(client, message):
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about'),
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_sticker(
-            query.message.chat.id,
-            query.message.id,
-            sticker=random.choice(PICS),
+        await message.reply_photo(
+            photo=("https://telegra.ph/file/74b540e9a28187613fcc8.jpg"),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
