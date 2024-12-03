@@ -547,7 +547,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -567,7 +567,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
@@ -584,7 +584,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.SOURCE_TXT,
@@ -600,7 +600,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
@@ -615,7 +615,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.BUTTON_TXT,
@@ -630,7 +630,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.AUTOFILTER_TXT,
@@ -645,7 +645,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.CONNECTION_TXT,
@@ -661,7 +661,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            sticker(random.choice(PICS))
+            sticker=random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
