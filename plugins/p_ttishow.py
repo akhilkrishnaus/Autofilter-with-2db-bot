@@ -42,7 +42,7 @@ async def save_group(bot, message):
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+            text=f"<b>›› 𝚃𝙷𝙰𝙽𝙺𝚂 𝚃𝙾 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿. {message.chat.title} ❣️\n›› 𝙳𝙾𝙽'𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽.⚡⚡.</b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
@@ -151,25 +151,30 @@ async def re_enable_chat(bot, message):
 
 
 @Client.on_message(filters.command('stats') & filters.incoming)
-async def get_ststs(bot, message):
-    rju = await message.reply('Fetching stats..')
-    #users and chats
-    total_users = await db.total_users_count()
-    totl_chats = await db.total_chat_count()
-    #primary db
-    filesp = await Media.count_documents()
-    #secondary db
-    totalsec = await Media2.count_documents()
-    #primary
-    stats = await clientDB.command('dbStats')
-    used_dbSize = (stats['dataSize']/(1024*1024))+(stats['indexSize']/(1024*1024))
-    free_dbSize = 512-used_dbSize
-    #secondary
-    stats2 = await clientDB2.command('dbStats')
-    used_dbSize2 = (stats2['dataSize']/(1024*1024))+(stats2['indexSize']/(1024*1024))
-    free_dbSize2 = 512-used_dbSize2
-    await rju.edit(script.STATUS_TXT.format((int(filesp)+int(totalsec)), total_users, totl_chats, filesp, round(used_dbSize, 2), round(free_dbSize, 2), totalsec, round(used_dbSize2, 2), round(free_dbSize2, 2)))
-
+async def get_stats(bot, message):
+    if message.from_user.id in ADMINS:
+        rju = await message.reply('Fetching stats..')
+        #users and chats
+        total_users = await db.total_users_count()
+        totl_chats = await db.total_chat_count()
+        #primary db
+        filesp = await Media.count_documents()
+        #secondary db
+        totalsec = await Media2.count_documents()
+        #primary
+        stats = await clientDB.command('dbStats')
+        used_dbSize = (stats['dataSize']/(1024*1024))+(stats['indexSize']/(1024*1024))
+        free_dbSize = 512-used_dbSize
+        #secondary
+        stats2 = await clientDB2.command('dbStats')
+        used_dbSize2 = (stats2['dataSize']/(1024*1024))+(stats2['indexSize']/(1024*1024))
+        free_dbSize2 = 512-used_dbSize2
+        await rju.edit(script.STATUS_TXT.format((int(filesp)+int(totalsec)), total_users, totl_chats, filesp, round(used_dbSize, 2), round(free_dbSize, 2), totalsec, round(used_dbSize2, 2), round(free_dbSize2, 2))),
+    else:
+        k = await message.reply_text("<b>Sᴏʀʀʏ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴀᴅᴍɪɴꜱ</b>")        
+        await asyncio.sleep(10)
+        await k.delete()
+        await message.delete()
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
