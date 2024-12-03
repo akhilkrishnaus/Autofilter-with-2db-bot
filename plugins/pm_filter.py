@@ -560,7 +560,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -584,7 +584,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -608,7 +608,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FLTERS_TXT.format(query.from_user.mention),
@@ -674,7 +674,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.TRANSLATE,
@@ -689,7 +689,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.IMAGINE,
@@ -704,7 +704,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.IMG,
@@ -719,7 +719,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.ECHO,
@@ -734,7 +734,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.STICKER,
@@ -749,7 +749,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FEED,
@@ -764,7 +764,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FONT_TXT,
@@ -779,7 +779,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.BUG_TXT,
@@ -794,7 +794,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PONG_TXT,
@@ -809,7 +809,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.TTS,
@@ -824,7 +824,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.AI,
@@ -839,7 +839,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FUNS,
@@ -854,7 +854,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PIN_TXT,
@@ -869,7 +869,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.GLOBAL_TXT,
@@ -884,7 +884,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FILE_STORE_TXT,
@@ -899,7 +899,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PROMOTE,
@@ -918,7 +918,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
@@ -933,7 +933,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.DICS_TXT,
@@ -949,7 +949,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.SOURCE_TXT,
@@ -965,7 +965,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
@@ -980,7 +980,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.BUTTON_TXT,
@@ -995,7 +995,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.AUTOFILTER_TXT,
@@ -1010,7 +1010,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.CONNECTION_TXT,
@@ -1026,7 +1026,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id,
             query.message.id,
-            InputMediaPhoto(random.choice(PICS))
+            InputMedia(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
