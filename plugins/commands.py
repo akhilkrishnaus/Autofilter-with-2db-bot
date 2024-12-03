@@ -49,7 +49,7 @@ async def start(client, message):
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about'),
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.send_sticker(
+        await client.send_sticker(
             sticker=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -92,7 +92,8 @@ async def start(client, message):
                     InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about'),
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.send_sticker(
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.send_sticker(
             sticker=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
