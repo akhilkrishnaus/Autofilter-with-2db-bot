@@ -557,10 +557,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♙ ʜᴏᴍᴇ', callback_data='help'),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -581,10 +581,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔮𝐒ᴛᴀᴛᴜ𝐬', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -605,10 +605,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♙ ʜᴏᴍᴇ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FLTERS_TXT.format(query.from_user.mention),
@@ -671,10 +671,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.TRANSLATE,
@@ -686,10 +686,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.IMAGINE,
@@ -701,10 +701,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.IMG,
@@ -716,10 +716,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.ECHO,
@@ -731,10 +731,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.STICKER,
@@ -746,10 +746,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FEED,
@@ -761,10 +761,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FONT_TXT,
@@ -776,10 +776,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.BUG_TXT,
@@ -791,10 +791,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PONG_TXT,
@@ -806,10 +806,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.TTS,
@@ -821,10 +821,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.AI,
@@ -836,10 +836,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FUNS,
@@ -851,10 +851,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PIN_TXT,
@@ -866,10 +866,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.GLOBAL_TXT,
@@ -881,10 +881,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.FILE_STORE_TXT,
@@ -896,10 +896,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.PROMOTE,
@@ -915,10 +915,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴄʟᴏsᴇ ⊝', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
@@ -930,10 +930,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='module')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.DICS_TXT,
@@ -946,10 +946,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.SOURCE_TXT,
@@ -962,10 +962,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📦 Bᴜᴛᴛᴏɴs ', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.MANUELFILTER_TXT,
@@ -977,10 +977,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='manuelfilter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.BUTTON_TXT,
@@ -992,10 +992,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='filter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.AUTOFILTER_TXT,
@@ -1007,10 +1007,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='filter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.CONNECTION_TXT,
@@ -1023,10 +1023,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        await client.send_sticker(
             query.message.chat.id,
             query.message.id,
-            InputMedia(random.choice(PICS))
+            sticker(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
@@ -1220,7 +1220,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     )
     await msg.reply_chat_action(enums.ChatAction.TYPING)
-    px = await message.reply_sticker(CAACAgIAAyEFAASDYYk1AAI7dGdOwfTrsG6h4n4wdb6Xxahcskm_AAJVAAOvxlEaZOf88CXpEL8eBA)
+    px = await message.reply_sticker("CAACAgIAAyEFAASDYYk1AAI7dGdOwfTrsG6h4n4wdb6Xxahcskm_AAJVAAOvxlEaZOf88CXpEL8eBA")
     await asyncio.sleep(1)
     await px.delete()
    
