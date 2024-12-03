@@ -1,4 +1,4 @@
-
+pyrotgfork
 tgcrypto
 pymongo
 motor
@@ -20,7 +20,6 @@ unidecode
 ytthumb
 yt-dlp
 youtube-dl
-git+https://github.com/Joelkb/cinemagoer
 python-dotenv
 Heroku3
 search_engine_parser
@@ -35,7 +34,6 @@ dnspython
 python-math
 Pillow
 speedtest-cli
-
 
 aiofiles
 aiohttp
@@ -70,7 +68,6 @@ pycryptodome
 pygments
 pyrogram>=2.0.30
 pyromod
-pyrotgfork
 PyPDF2
 pymongo>=4.0
 python-decouple
