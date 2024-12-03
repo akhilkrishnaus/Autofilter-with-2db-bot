@@ -50,6 +50,8 @@ async def start(client, message):
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_sticker(
+            query.message.chat.id,
+            query.message.id,
             sticker=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -94,6 +96,8 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.send_sticker(
+            query.message.chat.id,
+            query.message.id,
             sticker=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
