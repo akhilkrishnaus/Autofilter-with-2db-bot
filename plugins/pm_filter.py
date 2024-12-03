@@ -1195,7 +1195,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] ➵ {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -1216,15 +1216,18 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'🔥{search}🔥', 'qinfo')
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'qinfo')
         ]
     )
     btn.insert(1, 
         [
-            
+            InlineKeyboardButton('• Join Here For Movies 🎬•', url='https://t.me/mallumovieworldmain')
         ]
     )
-
+    await msg.reply_chat_action(enums.ChatAction.TYPING)
+    px = await message.reply_sticker(CAACAgIAAyEFAASDYYk1AAI7dGdOwfTrsG6h4n4wdb6Xxahcskm_AAJVAAOvxlEaZOf88CXpEL8eBA)
+    await asyncio.sleep(1)
+    await px.delete()
    
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
@@ -1236,7 +1239,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="No More Pages", callback_data="pages")]
+            [InlineKeyboardButton(text="~ No More ~", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -1273,7 +1276,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hᴇʏ 👋🏻{message.from_user.mention} 💝,\n\n📫 Hᴇʀᴇ ɪs Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ is\n{search} </b>"
+        cap = f"<b>Hᴇʏ 👋🏻{message.from_user.mention} 💝,\n\n\n📫 Hᴇʀᴇ ɪs Wʜᴀᴛ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ is\n{search}\n\n<a href=https://t.me/mallumovieworldmain>Thanks To \n[MMW BOTZ]</a></b>"
     if imdb and imdb.get('poster'):
         try:
             mes=await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
