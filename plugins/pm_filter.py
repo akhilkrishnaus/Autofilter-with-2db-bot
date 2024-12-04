@@ -35,81 +35,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 FILTER_MODE = {}
 
-@Client.on_message(filters.command('autofilter'))
-async def fil_mod(client, message):
-    mode_on = ["yes", "on", "true"]
-    mode_off = ["no", "off", "false"]
-
-    args: Optional[str] = None
-    try: 
-        args = message.text.split(None, 1)[1].lower() 
-    except IndexError: 
-        return await message.reply("**ɪɴᴄᴏᴍᴘʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ...**")
-    
-    m = await message.reply("**sᴇᴛᴛɪɴɢ...**")
-
-    if args in mode_on:
-        FILTER_MODE[str(message.chat.id)] = "True" 
-        await m.edit("**ᴀᴜᴛᴏғɪʟᴛᴇʀ ᴇɴᴀʙʟᴇᴅ**")
-    
-    elif args in mode_off:
-        FILTER_MODE[str(message.chat.id)] = "False"
-        await m.edit("**ᴀᴜᴛᴏғɪʟᴛᴇʀ ᴅɪsᴀʙʟᴇᴅ**")
-    else:
-        await m.edit("Use: /autofilter on OR /autofilter off")
-
-
-@Client.on_message((filters.group) & filters.text & filters.incoming)
-async def give_filter(client,message):
-    await global_filters(client, message)
-    group_id = message.chat.id
-    name = message.text
-
-    keywords = await get_filters(group_id)
-    for keyword in reversed(sorted(keywords, key=len)):
-        pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
-        if re.search(pattern, name, flags=re.IGNORECASE):
-            reply_text, btn, alert, fileid = await find_filter(group_id, keyword)
-
-            if reply_text:
-                reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
-
-            if btn is not None:
-                try:
-                    if fileid == "None":
-                        if btn == "[]":
-                            await message.reply_text(reply_text, disable_web_page_preview=True)
-                        else:
-                            button = eval(btn)
-                            await message.reply_text(
-                                reply_text,
-                                disable_web_page_preview=True,
-                                reply_markup=InlineKeyboardMarkup(button)
-                            )
-                    elif btn == "[]":
-                        await message.reply_cached_media(
-                            fileid,
-                            caption=reply_text or ""
-                        )
-                    else:
-                        button = eval(btn) 
-                        await message.reply_cached_media(
-                            fileid,
-                            caption=reply_text or "",
-                            reply_markup=InlineKeyboardMarkup(button)
-                        )
-                except Exception as e:
-                    print(e)
-                break 
-
-    else:
-        if FILTER_MODE.get(str(message.chat.id)) == "False":
-            return
-        else:
-            await auto_filter(client, message)
-
-
-@Client.on_message(filters.private & filters.text & filters.incoming) 
+@Client.on_message(filters.group | filters.private & filters.text & filters.incoming) 
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
@@ -119,7 +45,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("**Search for **\n{search} 🔎", show_alert=True)
+        return await query.answer("ok daa", show_alert=True)
     try:
         offset = int(offset)
     except:
