@@ -518,7 +518,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "source":
         buttons = [[     
             
-            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='start')
+            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -533,7 +533,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "manuelfilter":
         buttons = [[
-            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='filter'),
+            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='help'),
             InlineKeyboardButton('📦 Bᴜᴛᴛᴏɴs ', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -564,7 +564,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "autofilter":
         buttons = [[
-            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='filter')
+            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -579,7 +579,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "coct":
         buttons = [[
-            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='filter')
+            InlineKeyboardButton('⇌ Bᴀᴄᴋ ⇌', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -638,11 +638,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         stats2 = await clientDB2.command('dbStats')
         used_dbSize2 = (stats2['dataSize']/(1024*1024))+(stats2['indexSize']/(1024*1024))
         free_dbSize2 = 512-used_dbSize2
-        if query.from_user.id in ADMINS:
-            await query.message.edit_text(
+        await query.message.edit_text(
             text=script.STATUS_TXT.format((int(totalp)+int(totalsec)), users, chats, totalp, round(used_dbSize, 2), round(free_dbSize, 2), totalsec, round(used_dbSize2, 2), round(free_dbSize2, 2))),
-        else:
-            await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nIᴛꜱ ᴏɴʟʏ ғᴏʀ ᴍʏ ADMINS", show_alert=True)
             
     elif query.data == "rfrsh":
         await query.answer("ғᴇᴛᴄʜɪɴɢ ᴍᴏɴɢᴏᴅʙ ᴅᴀᴛᴀʙᴀsᴇ")
@@ -665,11 +662,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         stats2 = await clientDB2.command('dbStats')
         used_dbSize2 = (stats2['dataSize']/(1024*1024))+(stats2['indexSize']/(1024*1024))
         free_dbSize2 = 512-used_dbSize2
-        if query.from_user.id in ADMINS:
-            await query.message.edit_text(
+        await query.message.edit_text(
             text=script.STATUS_TXT.format((int(totalp)+int(totalsec)), users, chats, totalp, round(used_dbSize, 2), round(free_dbSize, 2), totalsec, round(used_dbSize2, 2), round(free_dbSize2, 2))),
-        else:
-            await query.answer("⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\nIᴛꜱ ᴏɴʟʏ ғᴏʀ ᴍʏ ADMINS", show_alert=True)
             
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
